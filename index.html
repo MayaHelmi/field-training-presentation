@@ -1,7 +1,10 @@
+<!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eight Weeks at Orange · Field Training at Orange Digital Center</title>
-<meta name="description" content="Eight weeks of full-stack field training at Orange Digital Center — Coding Academy, Amman: HTML, CSS, JavaScript, PHP and MySQL, ending in a live charity donation platform. By Maya Helmi and NourEddin Abu Salhieh, Applied Science Private University.">
+<title>Eight Weeks at Orange · Field Training</title>
+<meta name="description" content="Eight weeks of full-stack field training at Orange Digital Center · Coding Academy, Amman — Applied Science Private University.">
 <link rel="canonical" href="https://mayahelmi.github.io/field-training-presentation/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍊</text></svg>">
 <meta property="og:type" content="website">
@@ -12,6 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Eight Weeks at Orange","url":"https://mayahelmi.github.io/field-training-presentation/","description":"Eight-week full-stack field training at Orange Digital Center — Coding Academy, Amman.","author":[{"@type":"Person","name":"Maya Helmi"},{"@type":"Person","name":"NourEddin Abu Salhieh"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,540;9..144,640&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 :root{
@@ -268,6 +272,8 @@ footer{border-top:1px solid rgba(255,243,228,.45);margin-top:4.5rem;padding-top:
  .tshot,.tsimg img{transition:none}
 }
 </style>
+</head>
+<body>
 
 <div id="bar"></div>
 <nav aria-label="Sections">
@@ -460,13 +466,15 @@ document.documentElement.classList.add('js');
     [].slice.call(g.children).forEach(function(ch,i){ if(ch.classList.contains('rv')) ch.style.transitionDelay=(i*.09)+'s'; });
   });
 
+  var rvPending=[].slice.call(document.querySelectorAll('.rv')),
+      stopPending=[].slice.call(document.querySelectorAll('.stop'));
   function reveal(){
     var vh=innerHeight;
     var atBottom = innerHeight + scrollY >= document.body.scrollHeight - 2;
-    [].slice.call(document.querySelectorAll('.rv:not(.in)')).forEach(function(el){
-      if(atBottom || el.getBoundingClientRect().top < vh*.88) el.classList.add('in'); });
-    [].slice.call(document.querySelectorAll('.stop:not(.in)')).forEach(function(st){
-      if(st.getBoundingClientRect().top < vh*.7) st.classList.add('in'); });
+    rvPending=rvPending.filter(function(el){
+      if(atBottom || el.getBoundingClientRect().top < vh*.88){ el.classList.add('in'); return false } return true });
+    stopPending=stopPending.filter(function(st){
+      if(st.getBoundingClientRect().top < vh*.7){ st.classList.add('in'); return false } return true });
     if(tl){
       var r=tl.getBoundingClientRect();
       fill.style.height=(Math.min(1,Math.max(0,(vh*.72-r.top)/r.height))*100)+'%';
@@ -491,3 +499,6 @@ document.documentElement.classList.add('js');
   });
 })();
 </script>
+
+</body>
+</html>
