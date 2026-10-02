@@ -90,10 +90,12 @@ h2{font-family:var(--font-d);font-weight:540;font-size:clamp(2.1rem,4.8vw,3.6rem
 .logos img{width:var(--logo-size);height:var(--logo-size);object-fit:contain}
 .logos img.orange-light-logo{display:block;flex:0 0 auto}
 #hero .sub{color:var(--muted);font-size:clamp(1rem,1.6vw,1.2rem);max-width:none;margin-inline:auto}
-.idcard{margin-top:3rem;text-align:left;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;border:1px solid var(--line);background:var(--line)}
+.idcard{margin-top:3rem;text-align:left;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);background:var(--line)}
 .idcard>div{padding:1rem 1.2rem;background:#fff}
-@media(max-width:1100px){.idcard{grid-template-columns:1fr 1fr}.idcard>div:last-child{grid-column:1/-1}}
-@media(max-width:520px){.idcard{grid-template-columns:1fr}.idcard>div:last-child{grid-column:auto}}
+.idcard>.supervisors{display:grid;grid-template-rows:1fr 1fr;gap:1px;padding:0;background:var(--line)}
+.idcard>.supervisors>div{padding:1rem 1.2rem;background:#fff}
+@media(max-width:1100px){.idcard{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.idcard{grid-template-columns:1fr}}
 .idcard .k{font-family:var(--font-m);font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--faint);margin-bottom:.35rem}
 .idcard .v{font-size:.93rem}
 
@@ -332,8 +334,10 @@ h2{line-height:1.067}
     </div>
     <div class="idcard rv d3">
       <div><div class="k">Prepared by</div><div class="v">Maya Helmi · 202210413</div><div class="v">NourEddin Abu Salhieh · 202211108</div></div>
-      <div><div class="k">Academic Supervisor</div><div class="v">Dr. Bashar Alshouha</div></div>
-      <div><div class="k">Training Supervisor</div><div class="v">Rawan Abuseini</div></div>
+      <div class="supervisors">
+        <div><div class="k">Academic Supervisor</div><div class="v">Dr. Bashar Alshouha</div></div>
+        <div><div class="k">Training Supervisor</div><div class="v">Rawan Abuseini</div></div>
+      </div>
       <div><div class="k">Company</div><div class="v">Orange Digital Center — Coding Academy by Orange</div></div>
       <div><div class="k">Training Date</div><div class="v">19/7/2026 – 13/9/2026</div></div>
     </div>
