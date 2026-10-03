@@ -16,7 +16,7 @@
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍊</text></svg>"
     />
-    <link rel="stylesheet" href="assets/css/styles.css?v=mobile-nav-4" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=148af1ff93" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -58,7 +58,7 @@
         ]
       }
     </script>
-    <script src="assets/js/main.js?v=mobile-nav-4" defer></script>
+    <script src="assets/js/main.js?v=fde5209327" defer></script>
   </head>
 
   <body
@@ -72,7 +72,7 @@
 
     <nav
       data-site-nav
-      class="fixed inset-x-0 top-1 z-40 bg-black px-[clamp(1.25rem,5vw,4rem)] py-3 text-white"
+      class="fixed inset-x-0 top-1 z-40 bg-black px-[clamp(1.25rem,5vw,4rem)] py-3 text-white [--mobile-nav-offset:4.25rem]"
       aria-label="Main navigation"
     >
       <div class="mx-auto flex w-full max-w-[1180px] items-center gap-6">
@@ -191,13 +191,13 @@
       </div>
       <div
         data-mobile-nav-backdrop
-        class="pointer-events-none fixed inset-x-0 bottom-0 top-[4.25rem] bg-black/60 opacity-0 transition-opacity duration-300 ease-out motion-reduce:transition-none md:hidden"
+        class="pointer-events-none fixed inset-x-0 bottom-0 top-[var(--mobile-nav-offset)] bg-black/60 opacity-0 transition-opacity duration-300 ease-out motion-reduce:transition-none md:hidden"
         aria-hidden="true"
       ></div>
       <div
         data-mobile-nav
         id="mobile-navigation"
-        class="fixed bottom-0 right-0 top-[4.25rem] w-[min(88vw,24rem)] translate-x-full overflow-y-auto border-l border-t border-[#333] bg-black px-[clamp(1.25rem,5vw,2rem)] pb-6 pt-3 shadow-2xl transition-transform duration-300 ease-out motion-reduce:transition-none md:hidden"
+        class="fixed bottom-0 right-0 top-[var(--mobile-nav-offset)] w-[min(88vw,24rem)] translate-x-full overflow-y-auto border-l border-t border-[#333] bg-black px-[clamp(1.25rem,5vw,2rem)] pb-6 pt-3 shadow-2xl transition-transform duration-300 ease-out motion-reduce:transition-none md:hidden"
         aria-hidden="true"
         inert
       >
@@ -264,7 +264,7 @@
       </div>
     </nav>
 
-    <main>
+    <main data-page-content>
       <section
         id="hero"
         class="flex min-h-svh items-center border-b-2 border-[#b3b3b3] bg-[#eee] px-[clamp(1.25rem,5vw,4rem)] pb-[clamp(5rem,11vh,8rem)] pt-32"

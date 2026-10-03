@@ -7,13 +7,19 @@
   const mobileNavButton = document.querySelector("[data-mobile-nav-button]");
   const mobileMenuIcon = document.querySelector("[data-mobile-menu-icon]");
   const mobileCloseIcon = document.querySelector("[data-mobile-close-icon]");
+  const pageContent = document.querySelector("[data-page-content]");
+  let focusBeforeMobileMenu;
 
   function setMobileMenu(open) {
     if (!mobileNav || !mobileNavButton) return;
+    const focusWasInside = mobileNav.contains(document.activeElement);
+    if (open) focusBeforeMobileMenu = document.activeElement;
+
     mobileNav.classList.toggle("translate-x-full", !open);
     mobileNav.classList.toggle("translate-x-0", open);
     mobileNav.setAttribute("aria-hidden", String(!open));
     mobileNav.inert = !open;
+    if (pageContent) pageContent.inert = open;
     mobileNavBackdrop?.classList.toggle("pointer-events-none", !open);
     mobileNavBackdrop?.classList.toggle("opacity-0", !open);
     mobileNavBackdrop?.classList.toggle("opacity-100", open);
@@ -25,6 +31,14 @@
     );
     mobileMenuIcon?.classList.toggle("hidden", open);
     mobileCloseIcon?.classList.toggle("hidden", !open);
+
+    if (open) {
+      requestAnimationFrame(() =>
+        mobileNav.querySelector("[data-mobile-nav-link]")?.focus(),
+      );
+    } else if (focusWasInside) {
+      (focusBeforeMobileMenu ?? mobileNavButton).focus();
+    }
   }
 
   if (siteNav && mobileNav && mobileNavButton) {
@@ -95,11 +109,11 @@
 
   const celebrationButton = document.querySelector("[data-celebrate]");
   const celebrationSound = document.querySelector("[data-celebration-sound]");
-  const prefersReducedMotion = window.matchMedia(
+  const reducedMotionQuery = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
-  ).matches;
+  );
 
-  if (celebrationButton && !prefersReducedMotion) {
+  if (celebrationButton && !reducedMotionQuery.matches) {
     celebrationButton.querySelector("svg")?.animate(
       [
         { transform: "rotate(0deg) scale(1)", offset: 0 },
@@ -198,11 +212,13 @@
       celebrationSound.play().catch(() => {});
     }
 
-    const bounds = celebrationButton.getBoundingClientRect();
-    launchConfetti({
-      x: bounds.left + bounds.width / 2,
-      y: bounds.top + bounds.height / 2,
-    });
+    if (!reducedMotionQuery.matches) {
+      const bounds = celebrationButton.getBoundingClientRect();
+      launchConfetti({
+        x: bounds.left + bounds.width / 2,
+        y: bounds.top + bounds.height / 2,
+      });
+    }
   });
 
   const progressBar = document.querySelector("[data-scroll-progress]");

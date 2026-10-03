@@ -2,14 +2,19 @@
   "name": "field-training-presentation",
   "private": true,
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --minify",
-    "format": "prettier --write index.html 404.html assets/js/main.js src/input.css",
-    "format:check": "prettier --check index.html 404.html assets/js/main.js src/input.css",
+    "build": "npm run build:css && npm run version:assets",
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --minify",
+    "check": "npm run format:check && npm run build && node --check assets/js/main.js && node scripts/verify-site.mjs && npm test",
+    "format": "prettier --write index.html 404.html assets/js/main.js src/input.css scripts/*.mjs tests/*.mjs",
+    "format:check": "prettier --check index.html 404.html assets/js/main.js src/input.css scripts/*.mjs tests/*.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "version:assets": "node scripts/version-assets.mjs",
     "watch": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --watch"
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.3.0",
+    "linkedom": "0.18.13",
     "prettier": "3.9.9",
-    "tailwindcss": "4.3.3"
+    "tailwindcss": "4.3.0"
   }
 }
