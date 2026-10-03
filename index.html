@@ -16,7 +16,7 @@
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍊</text></svg>"
     />
-    <link rel="stylesheet" href="assets/css/styles.css?v=mobile-nav-3" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=mobile-nav-4" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -58,7 +58,7 @@
         ]
       }
     </script>
-    <script src="assets/js/main.js?v=mobile-nav-3" defer></script>
+    <script src="assets/js/main.js?v=mobile-nav-4" defer></script>
   </head>
 
   <body
@@ -190,9 +190,16 @@
         </button>
       </div>
       <div
+        data-mobile-nav-backdrop
+        class="pointer-events-none fixed inset-x-0 bottom-0 top-[4.25rem] bg-black/60 opacity-0 transition-opacity duration-300 ease-out motion-reduce:transition-none md:hidden"
+        aria-hidden="true"
+      ></div>
+      <div
         data-mobile-nav
         id="mobile-navigation"
-        class="absolute inset-x-0 top-full hidden max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-[#333] bg-black px-[clamp(1.25rem,5vw,4rem)] pb-6 pt-3 shadow-2xl md:hidden"
+        class="fixed bottom-0 right-0 top-[4.25rem] w-[min(88vw,24rem)] translate-x-full overflow-y-auto border-l border-t border-[#333] bg-black px-[clamp(1.25rem,5vw,2rem)] pb-6 pt-3 shadow-2xl transition-transform duration-300 ease-out motion-reduce:transition-none md:hidden"
+        aria-hidden="true"
+        inert
       >
         <div class="mx-auto flex max-w-[1180px] flex-col">
           <a

@@ -1,13 +1,23 @@
 (() => {
   const siteNav = document.querySelector("[data-site-nav]");
   const mobileNav = document.querySelector("[data-mobile-nav]");
+  const mobileNavBackdrop = document.querySelector(
+    "[data-mobile-nav-backdrop]",
+  );
   const mobileNavButton = document.querySelector("[data-mobile-nav-button]");
   const mobileMenuIcon = document.querySelector("[data-mobile-menu-icon]");
   const mobileCloseIcon = document.querySelector("[data-mobile-close-icon]");
 
   function setMobileMenu(open) {
     if (!mobileNav || !mobileNavButton) return;
-    mobileNav.classList.toggle("hidden", !open);
+    mobileNav.classList.toggle("translate-x-full", !open);
+    mobileNav.classList.toggle("translate-x-0", open);
+    mobileNav.setAttribute("aria-hidden", String(!open));
+    mobileNav.inert = !open;
+    mobileNavBackdrop?.classList.toggle("pointer-events-none", !open);
+    mobileNavBackdrop?.classList.toggle("opacity-0", !open);
+    mobileNavBackdrop?.classList.toggle("opacity-100", open);
+    document.documentElement.classList.toggle("overflow-hidden", open);
     mobileNavButton.setAttribute("aria-expanded", String(open));
     mobileNavButton.setAttribute(
       "aria-label",
@@ -26,6 +36,8 @@
     mobileNav.querySelectorAll("[data-mobile-nav-link]").forEach((link) => {
       link.addEventListener("click", () => setMobileMenu(false));
     });
+
+    mobileNavBackdrop?.addEventListener("click", () => setMobileMenu(false));
 
     document.addEventListener("click", (event) => {
       if (!siteNav.contains(event.target)) setMobileMenu(false);
