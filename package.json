@@ -1,0 +1,15 @@
+{
+  "name": "field-training-presentation",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --minify",
+    "format": "prettier --write index.html 404.html assets/js/main.js src/input.css",
+    "format:check": "prettier --check index.html 404.html assets/js/main.js src/input.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.0",
+    "prettier": "3.9.9",
+    "tailwindcss": "4.3.3"
+  }
+}

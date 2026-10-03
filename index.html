@@ -1,528 +1,1136 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eight Weeks at Orange · Full Stack Web Development Field Training</title>
-<meta name="description" content="Eight weeks of full-stack web development field training at Orange Digital Center · Coding Academy, Amman — Applied Science Private University.">
-<link rel="canonical" href="https://mayahelmi.github.io/field-training-presentation/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍊</text></svg>">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Eight Weeks at Orange · Full Stack Web Development Field Training">
-<meta property="og:description" content="From a first HTML page to a live full-stack web platform — our field training at Orange Digital Center, Coding Academy, Amman.">
-<meta property="og:url" content="https://mayahelmi.github.io/field-training-presentation/">
-<meta property="og:image" content="https://mayahelmi.github.io/field-training-presentation/og-orange-jordan.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Full Stack Web Development field training at Orange Digital Center">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://mayahelmi.github.io/field-training-presentation/og-orange-jordan.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Eight Weeks at Orange","url":"https://mayahelmi.github.io/field-training-presentation/","description":"Eight-week full-stack web development field training at Orange Digital Center — Coding Academy, Amman.","author":[{"@type":"Person","name":"Maya Helmi"},{"@type":"Person","name":"NourEddin Abu Salhieh"}]}</script>
-<style>
-:root{
-  --paper:#fff;--band:#eee;--line:#b3b3b3;--ink:#000;--muted:#595959;--faint:#666;
-  --orange:#ff7900;--orange-ink:#f16e00;
-  --font-roman:"HelveticaNeue-Roman","HelvNeue55_W1G","Helvetica Neue",Helvetica,"Noto Sans","Liberation Sans",Arial,sans-serif;
-  --font-medium:"HelveticaNeue-Medium","HelvNeue65_W1G","Helvetica Neue",Helvetica,"Noto Sans","Liberation Sans",Arial,sans-serif;
-  --font-bold:"HelveticaNeue-Bold","HelvNeue75_W1G","Helvetica Neue",Helvetica,"Noto Sans","Liberation Sans",Arial,sans-serif;
-  --font-b:var(--font-roman);--font-m:var(--font-medium);--font-d:var(--font-bold);
-  --pad:clamp(1.25rem,5vw,4rem);--sec-y:clamp(5rem,11vh,8rem);--sub-y:clamp(2.5rem,6vw,4rem);--grp:clamp(1.25rem,2.5vw,2rem);
-  --ease:cubic-bezier(.77,0,.175,1);
-}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font-family:var(--font-roman);font-size:16px;line-height:1.5;letter-spacing:-.006em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::selection{background:var(--orange);color:#fff}
-img{max-width:100%}
-
-nav{position:fixed;top:4px;left:0;right:0;z-index:40;display:flex;align-items:center;gap:1.5rem;
- padding:.8rem var(--pad);background:var(--ink);border-bottom:0;box-shadow:none;color:#fff}
-nav .who{font-family:var(--font-medium);font-size:.72rem;letter-spacing:.02em;color:#fff;text-transform:none;white-space:nowrap}
-nav .links{display:flex;gap:1.1rem;margin-left:auto;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
-nav .links::-webkit-scrollbar{display:none}
-@media(max-width:900px){nav .who{display:none}nav .links{margin-left:0;width:100%}}
-nav a{font-family:var(--font-medium);font-size:.72rem;letter-spacing:.02em;color:#fff;text-decoration:none;text-transform:none;transition:color .25s}
-nav a:hover,nav a:focus-visible,nav .gh:hover{color:var(--orange)}
-nav a.on{color:#fff;box-shadow:inset 0 -3px 0 var(--orange)}
-nav a:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
-nav .gh{display:inline-flex;align-items:center;gap:.4rem;color:#fff;padding-left:1.1rem;border-left:1px solid #555;font-family:var(--font-medium);letter-spacing:.02em;text-transform:none}
-nav .gh img{height:14px;width:14px;display:block;filter:invert(1)}
-nav .gh .x{color:var(--orange-ink)}
-.ghmenu{position:relative;display:inline-flex}
-.ghbtn{background:none;border:none;cursor:pointer;font:inherit;letter-spacing:inherit;text-transform:inherit}
-.ghdrop{position:absolute;top:calc(100% + .55rem);right:0;min-width:15rem;background:#fff;border:1px solid var(--line);
- box-shadow:0 10px 28px rgba(29,29,27,.12);padding:.4rem;display:none;z-index:60}
-.ghmenu.open .ghdrop{display:block}
-.ghdrop a{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.55rem .8rem;
- font-family:var(--font-m);font-size:.72rem;letter-spacing:.06em;color:var(--ink);text-decoration:none;text-transform:none}
-.ghdrop a:hover,.ghdrop a:focus-visible{background:var(--band);color:var(--orange-ink)}
-.ghdrop a .x{color:var(--orange-ink)}
-#bar{position:fixed;top:0;left:0;height:4px;background:var(--orange);width:0;z-index:41}
-
-section{padding:var(--sec-y) var(--pad);max-width:1180px;margin:0 auto;position:relative}
-.eyebrow{font-family:var(--font-m);font-size:.75rem;font-weight:400;line-height:1.5;letter-spacing:.22em;text-transform:uppercase;color:var(--orange-ink);margin-bottom:1.2rem}
-.ic{width:26px;height:26px;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round;display:block}
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
-.wcard{border:2px solid var(--line);background:#fff;border-radius:6px;padding:1.5rem 1.5rem 1.3rem;box-shadow:none;overflow:hidden;
- transition:transform .35s var(--ease),border-color .35s}
-.wcard:hover{transform:translateY(-5px);border-color:var(--orange);box-shadow:none}
-.wcard h4{font-family:var(--font-bold);font-weight:700;font-size:1.3rem;letter-spacing:-.025em;margin:0 0 .45rem}
-.wcard p{color:var(--muted);font-size:.95rem}
-@media(max-width:760px){.cards{grid-template-columns:1fr}}
-.subhead{font-family:var(--font-bold);font-weight:700;font-size:clamp(1.5rem,2.6vw,2.1rem);letter-spacing:-.025em;margin:var(--sub-y) 0 1.2rem}
-/* card visuals */
-.cviz{border-bottom:1px solid var(--line);border-radius:0;margin:-1.5rem -1.5rem 1.1rem;padding:0;overflow:hidden;background:var(--band)}
-.cviz img{width:100%;height:180px;object-fit:cover;display:block}
-
-h2{font-family:var(--font-bold);font-weight:700;font-size:clamp(2.1rem,4.8vw,3.6rem);line-height:1.067;letter-spacing:-.025em;text-wrap:balance;margin-bottom:.9rem}
-
-.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.rv.in{opacity:1;transform:none}
-.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
-
-/* ---------- HERO ---------- */
-#hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:8rem;max-width:none;background:var(--band);border-bottom:2px solid var(--line)}
-#hero .inner{max-width:1180px;margin:0 auto;width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(19rem,20rem);grid-template-areas:"logos details" "title details" "subtitle details" "actions details";column-gap:clamp(2.5rem,5vw,4rem);align-items:start;text-align:left}
-.logos{grid-area:logos;--logo-size:90px;display:flex;align-items:center;justify-content:flex-start;gap:1.6rem;margin:0 0 2.2rem;flex-wrap:wrap}
-.logos img{width:var(--logo-size);height:var(--logo-size);object-fit:contain}
-.logos img.orange-light-logo{display:block;flex:0 0 auto}
-#hero .sub{grid-area:subtitle;color:var(--muted);font-family:var(--font-roman);font-size:clamp(1rem,1.6vw,1.2rem);font-style:normal;max-width:none;margin:0;white-space:nowrap}
-.idcard{grid-area:details;align-self:stretch;margin:0;text-align:left;display:flex;flex-direction:column;gap:1px;border:2px solid var(--line);background:var(--line);border-radius:6px;overflow:hidden}
-.idcard>div{display:flex;flex:1;flex-direction:column;justify-content:center;padding:1rem 1.2rem;background:#fff}
-.idcard>.supervisors{display:grid;flex:2;grid-template-rows:1fr 1fr;justify-content:stretch;gap:1px;padding:0;background:var(--line)}
-.idcard>.supervisors>div{display:flex;flex-direction:column;justify-content:center;padding:1rem 1.2rem;background:#fff}
-.idcard .k{font-family:var(--font-medium);font-size:.64rem;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);margin-bottom:.35rem}
-.idcard .v{font-size:.93rem}
-
-/* ---------- INTRODUCTION ---------- */
-
-/* ---------- SECTION 01 - case-study introduction ---------- */
-
-/* workflow */
-section:not(#hero)>.eyebrow,#journey .inner>.eyebrow,#qa .inner>.eyebrow{font-size:clamp(1.05rem,2.1vw,1.45rem);letter-spacing:.2em;margin-bottom:var(--grp)}
-.wfcard{border:2px solid var(--line);background:#fff;border-radius:6px;padding:2.4rem 2.2rem 2.6rem;margin-bottom:var(--sub-y);box-shadow:none}
-.wf{margin:0;position:relative}
-@media(max-width:860px){.wfcard{padding:1.4rem 1.4rem 1.8rem}}
-.wfstages{list-style:none;padding:0;margin:0;display:flex;gap:0;position:relative}
-.wfstages li{position:relative;flex:1;min-width:0;text-align:center;padding-top:3.6rem}
-.wfl{display:block;font-family:var(--font-d);font-weight:540;font-size:clamp(1.05rem,1.8vw,1.45rem);margin-top:.3rem}
-.wfline{position:absolute;top:19.5px;left:10%;right:10%;height:1px;background:var(--line)}
-.wfic{position:absolute;top:0;left:50%;margin-left:-20px;width:40px;height:40px;padding:10px;box-sizing:border-box;
- background:var(--orange);border-radius:50%;color:#fff;stroke-width:1.9;display:block}
-@keyframes wfpulse{
- 0%,14%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,121,0,.35)}
- 5%{transform:scale(1.18);box-shadow:0 0 0 8px rgba(255,121,0,.16)}
- 10%{transform:scale(1);box-shadow:0 0 0 14px rgba(255,121,0,0)}
- 100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,121,0,0)}}
-.js .wf.in li .wfic{animation:wfpulse 5s linear infinite}
-.js .wf.in li:nth-child(2) .wfic{animation-delay:1s}
-.js .wf.in li:nth-child(3) .wfic{animation-delay:2s}
-.js .wf.in li:nth-child(4) .wfic{animation-delay:3s}
-.js .wf.in li:nth-child(5) .wfic{animation-delay:4s}
-.wffill{position:absolute;inset:0;background:var(--orange);transform:scaleX(0);transform-origin:left}
-.js .wf.in .wffill{transform:scaleX(1);transition:transform 1.3s var(--ease)}
-@media(max-width:860px){
- .wfline{display:none}
- .wfstages{flex-direction:column;gap:1.1rem;padding:0;border:none}
- .wfstages li{display:flex;align-items:center;gap:.9rem;text-align:left;padding-top:0}
- .wfic{position:static;margin:0;flex:0 0 auto}
- .wfl{margin:0}
-}
-
-/* ---------- FORMAL TRAINING RECEIVED ---------- */
-
-/* ---------- CONCLUSION ---------- */
-#journey,#outcome{background:var(--band);box-shadow:0 0 0 100vmax var(--band);clip-path:inset(0 -100vmax)}
-
-/* compression-pass additions */
-.deck em{font-style:italic;color:var(--orange-ink)}
-.wkflow{font-family:var(--font-m);font-size:.78rem;color:var(--muted);letter-spacing:.05em;margin:.2rem 0 .4rem}
-.wkflow i{font-style:normal;color:var(--orange)}
-
-/* ---------- Q & A : the one bold moment ---------- */
-#qa{max-width:none;background:var(--ink);color:#fff;padding-bottom:3rem}
-#qa .inner{max-width:1180px;margin:0 auto}
-#qa .eyebrow,#qa h2{color:#fff}
-#qa h2{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:340}
-#qa h2 em{font-style:italic;font-weight:640;color:#fff}
-#qa ::selection{background:#1A1006;color:var(--orange)}
-footer{border-top:1px solid rgba(255,243,228,.45);margin-top:4.5rem;padding-top:1.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
- font-family:var(--font-m);font-size:.7rem;letter-spacing:.1em;color:#FFF3E4;text-transform:uppercase}
-.fnames{display:flex;flex-direction:column;gap:.4rem}
-.confetti{position:fixed;inset:0;pointer-events:none;z-index:80}
-#outcome h2{font-size:clamp(1.5rem,3.3vw,2.55rem)}
-.jchain{list-style:none;display:flex;margin:0;padding:0;position:relative}
-.jchain::before{content:"";position:absolute;left:10%;right:10%;top:23px;height:1px;background:var(--line)}
-.jchain li{flex:1;position:relative;text-align:center;min-width:0}
-.jic{position:relative;z-index:1;width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center}
-.jic img{width:22px;height:22px;display:block}
-.jlbl{display:block;margin-top:.6rem;font-family:var(--font-d);font-weight:540;font-size:clamp(.95rem,1.6vw,1.3rem)}
-.jchain li.live .jic{background:var(--orange);border-color:var(--orange);color:#fff}
-.jchain li.live .ic{width:20px;height:20px}
-@media(max-width:700px){.jchain{flex-wrap:wrap;gap:1.3rem 0}.jchain::before{display:none}.jchain li{flex:1 1 33%}}
-.subnote{color:var(--muted);max-width:44rem;margin:-.5rem 0 1.4rem}
-.concpara{max-width:46rem;color:var(--muted);font-size:1.06rem;line-height:1.75;margin-top:1.5rem}
-.concfacts{font-family:var(--font-m);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:2rem}
-.qhead{display:flex;align-items:center;gap:1.7rem;flex-wrap:wrap}
-.qhead h2{margin-bottom:0}
-.yaybtn{background:none;border:0;padding:.2rem;cursor:pointer;line-height:0;transition:transform .3s var(--ease)}
-.yaybtn svg{width:60px;height:60px;display:block}
-.yaybtn:hover{transform:rotate(-10deg) scale(1.15)}
-.yaybtn:focus-visible{outline:2px solid #FFF3E4;outline-offset:4px;border-radius:10px}
-
-
-.tl{position:relative;margin-top:3.2rem;padding-left:clamp(120px,14vw,150px)}
-.tl::before{content:"";position:absolute;left:clamp(30px,4vw,40px);top:6px;bottom:6px;width:1px;background:#D9D0C4}
-#tlfill{position:absolute;left:clamp(30px,4vw,40px);top:6px;width:1px;background:var(--orange);height:0}
-.chips{display:flex;flex-wrap:wrap;gap:.55rem 1.3rem;margin-top:1.2rem;align-items:center;border-top:1px solid var(--line);padding-top:1.05rem}
-.chip{font-family:var(--font-m);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:.45rem}
-.chip img{height:15px;width:15px;display:block}
-/* clickable task screenshots */
-.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;margin-top:1.3rem}
-.tshot{display:block;border:2px solid var(--line);border-radius:6px;background:#fff;box-shadow:none;overflow:hidden;text-decoration:none;color:var(--ink);
- transition:transform .35s var(--ease),border-color .35s,box-shadow .35s}
-.tshot:hover{transform:translateY(-3px);border-color:var(--orange);box-shadow:none}
-.tshot:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
-.tsimg{display:block;aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--line);background:var(--band)}
-.tsimg img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s var(--ease)}
-.tshot:hover .tsimg img{transform:scale(1.03)}
-.tsbar{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.5rem .7rem;
- font-family:var(--font-m);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase}
-@media(max-width:840px){.tgrid{grid-template-columns:1fr 1fr}}
-/* formal training - front/back/db cards */
-.fbd{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;align-items:start;margin-top:2.2rem}
-.fcard{border:2px solid var(--line);border-top-color:var(--orange);background:#fff;border-radius:6px;padding:1.6rem 1.5rem 1.4rem;box-shadow:none}
-.fcard h3{font-family:var(--font-bold);font-weight:700;font-size:1.35rem;letter-spacing:-.025em;color:var(--ink);margin:0 0 .8rem}
-.flist{list-style:none;padding:0;margin:0}
-.flist li{padding:.6rem 0;border-top:1px solid rgba(29,29,27,.1);font-size:.97rem}
-.fcard .chips{margin-top:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:.65rem .8rem;align-items:center;border-top-color:rgba(29,29,27,.12)}
-.fcard .chips .chlbl{grid-column:1/-1;margin:0}
-.flist li.soonitem{color:var(--faint)}
-.flist li.soonitem em{font-style:normal;font-family:var(--font-m);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-ink);margin-left:.5rem}
-@media(max-width:860px){.fbd{grid-template-columns:1fr}}
-.flowrow{display:flex;align-items:center;gap:.7rem}
-.flowrow .tshot{flex:1 1 0;min-width:0}
-.fla{font-family:var(--font-m);font-style:normal;color:var(--orange-ink);font-size:1.15rem;flex:0 0 auto}
-@media(max-width:840px){.flowrow{display:grid;grid-template-columns:1fr 1fr}.fla{display:none}}
-/* project link pills - every task links to its live page or source */
-@media(pointer:coarse){
- nav a{padding:.35rem 0}
-}
-/* ---- premium tasks ---- */
-.stop{position:relative;background:#fff;border:2px solid var(--line);border-radius:6px;
- padding:clamp(1.6rem,3.5vw,2.6rem);margin-bottom:clamp(2rem,4.5vw,3.2rem);
- box-shadow:none;
- transition:box-shadow .35s var(--ease)}
-.stop:hover{box-shadow:0 2px 4px rgba(29,29,27,.05),0 22px 48px -20px rgba(29,29,27,.18)}
-.stop.soon{margin-bottom:0;border:2px dashed #999;background:#fff;box-shadow:none;padding:clamp(1.6rem,3.5vw,2.6rem)}
-.stop.soon:hover{box-shadow:none}
-.stop .wk{position:absolute;top:clamp(1.7rem,3.6vw,2.7rem);left:calc(clamp(30px,4vw,40px) - clamp(120px,14vw,150px));transform:translateX(-50%);white-space:nowrap;background:var(--band);color:var(--orange-ink);padding:.3rem .55rem;font-family:var(--font-m);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase}
-.stop h3{margin:0 0 .25rem}
-.chlbl{font-family:var(--font-m);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);margin-right:.5rem}
-@media(max-width:760px){.stop{padding:1.3rem 1.2rem}
- .tl{padding-left:1.6rem}
- .tl::before,#tlfill{left:5px}
- .stop .wk{position:static;transform:none;display:inline-block;vertical-align:middle;margin:0 .6rem .35rem 0;white-space:normal}
- .stop h3{display:inline-block;vertical-align:middle}}
-#hero h1{grid-area:title;max-width:none;font-family:var(--font-bold);font-weight:700;font-size:clamp(2.8rem,7vw,5.6rem);line-height:.98;letter-spacing:-.035em;margin:.6rem 0 1.2rem;text-wrap:balance}
-#hero .sub em{font-style:normal}
-.hero-actions{grid-area:actions;display:flex;justify-content:flex-start;gap:.75rem;flex-wrap:wrap;margin:2rem 0 0}
-.orange-cta{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.7rem 1.25rem;border:2px solid #000;border-radius:6px;font-family:var(--font-bold);font-size:.95rem;line-height:1;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
-.orange-cta.primary{background:#ff7900;color:#fff;border-color:#ff7900}
-.orange-cta.primary:hover,.orange-cta.primary:focus-visible{background:#000;color:#fff;border-color:#000}
-.orange-cta.secondary{background:#000;color:#fff}
-.orange-cta.secondary:hover,.orange-cta.secondary:focus-visible{background:#fff;color:#000}
-.orange-cta:focus-visible{outline:3px solid #ff7900;outline-offset:3px}
-@media(max-width:1100px){
-  #hero .inner{grid-template-columns:1fr;grid-template-areas:"logos" "title" "subtitle" "actions" "details";column-gap:0}
-  .logos{margin-bottom:2rem}
-  .idcard{min-height:0;margin-top:3rem;display:grid;grid-template-columns:1fr 1fr}
-}
-@media(max-width:820px){
-  #hero .sub{white-space:normal}
-  #hero h1,#hero .sub{text-align:center}
-  .logos{justify-content:center}
-}
-@media(max-width:520px){
-  #hero{padding-top:7.5rem}
-  #hero h1{font-size:2.5rem;line-height:1}
-  .hero-actions{display:grid;grid-template-columns:1fr;width:100%}
-  .orange-cta{width:100%}
-  .logos{--logo-size:60px}
-  .idcard{grid-template-columns:1fr}
-}
-@media (prefers-reduced-motion:reduce){
- html{scroll-behavior:auto}
- .js .rv{opacity:1;transform:none;transition:none}
- .js .wf .wffill{transform:scaleX(1);transition:none}
- .js .wf.in li .wfic{animation:none}
- .wcard,.stop,.tshot,.tsimg img,.yaybtn{transition:none}
-}
-@media print{
- nav,#bar{display:none}
- .js .rv{opacity:1!important;transform:none!important;clip-path:none!important}
- #hero{min-height:auto;padding-top:2rem}
- #hero .inner{display:block}
- .logos{margin-bottom:1.5rem}
- .idcard{display:grid;grid-template-columns:1fr 1fr;min-height:0;margin-top:2rem}
- section{padding:2.2rem var(--pad)}
- #qa{background:var(--orange)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-}
-</style>
-</head>
-<body>
-
-<div id="bar"></div>
-<nav aria-label="Sections">
-  <span class="who">Maya &amp; NourEddin — Field Training</span>
-  <div class="links">
-    <a href="#hero" class="on">Start</a><a href="#rhythm">Introduction</a><a href="#journey">Tasks</a><a href="#practice">Formal Training</a><a href="#outcome">Conclusion</a><a href="#qa">Q&amp;A</a>
-  </div>
-  <div class="ghmenu"><button class="gh ghbtn" type="button" aria-expanded="false" aria-controls="github-links"><img src="assets/icons/github.svg" alt="">GitHub <span class="x">&#9662;</span></button>
-    <div class="ghdrop" id="github-links">
-      <a href="https://github.com/MayaHelmi" target="_blank" rel="noopener">Maya Helmi <span class="x">&#8599;</span></a>
-      <a href="https://github.com/NourEddin004" target="_blank" rel="noopener">NourEddin Abu Salhieh <span class="x">&#8599;</span></a>
-    </div></div>
-</nav>
-
-<main>
-<section id="hero">
-  <div class="inner">
-    <div class="logos rv"><img class="asu" src="asu-portal-logo-cropped.png" alt="Applied Science Private University">
-<img class="orange-light-logo" src="orange-official.svg" alt="Orange Jordan">
-</div>
-    <h1 class="rv d1">Full Stack Web Development</h1>
-    <p class="sub rv d2 deck"><em>Our Field Training at Orange Digital Center &middot; Coding Academy &middot; Amman</em></p>
-    <div class="hero-actions rv d3">
-      <a class="orange-cta primary" href="#journey">Explore the tasks</a>
-      <a class="orange-cta secondary" href="https://mayahelmi.github.io/hopebridge-charity-platform/" target="_blank" rel="noopener">View HopeBridge</a>
-    </div>
-    <div class="idcard rv d3">
-      <div><div class="k">Prepared by</div><div class="v">Maya Helmi · 202210413</div><div class="v">NourEddin Abu Salhieh · 202211108</div></div>
-      <div class="supervisors">
-        <div><div class="k">Academic Supervisor</div><div class="v">Dr. Bashar Alshouha</div></div>
-        <div><div class="k">Training Supervisor</div><div class="v">Rawan Abuseini</div></div>
-      </div>
-      <div><div class="k">Company</div><div class="v">Orange Digital Center — Coding Academy by Orange</div></div>
-      <div><div class="k">Training Date</div><div class="v">19/7/2026 – 13/9/2026</div></div>
-    </div>
-  </div>
-</section>
-
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-<defs>
-<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.2"/><path d="M15.2 15.2 20 20"/></symbol>
-<symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7 4 12l4.5 5M15.5 7 20 12l-4.5 5"/></symbol>
-<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.6"/></symbol>
-<symbol id="i-loop" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></symbol>
-<symbol id="i-present" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="1.4"/><path d="M12 16.5v3M8.5 21h7"/></symbol>
-<symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5L19.5 7"/></symbol>
-</defs></svg>
-<section id="rhythm">
-  <h2 class="eyebrow rv">01 · Introduction</h2>
-  
-    <!-- workflow -->
-    <h3 class="subhead rv">How we worked</h3>
-  <div class="cards">
-    <article class="wcard rv">
-      <div class="cviz" aria-hidden="true"><img src="assets/images/intro-challenge-project-based.jpg" alt=""></div>
-      <h4>Challenge &amp; Project-Based</h4>
-      <p>Practical tasks + independent research.</p>
-    </article>
-    <article class="wcard rv d1">
-      <div class="cviz" aria-hidden="true"><img src="assets/images/intro-team-environment.jpg" alt=""></div>
-      <h4>Team Environment</h4>
-      <p>Agile teamwork &mdash; daily stand-ups + shared problem solving.</p>
-    </article>
-    <article class="wcard rv d2">
-      <div class="cviz" aria-hidden="true"><img src="assets/images/intro-github-workflow.jpg" alt=""></div>
-      <h4>GitHub Workflow</h4>
-      <p>Version control + code review.</p>
-    </article>
-    <article class="wcard rv d3">
-      <div class="cviz" aria-hidden="true"><img src="assets/images/intro-present-defend.jpg" alt=""></div>
-      <h4>Present &amp; Defend</h4>
-      <p>Weekly project presentations.</p>
-    </article>
-  </div>
-
-</section>
-
-<section id="journey">
-  <div class="inner">
-    <h2 class="eyebrow rv">02 · Tasks</h2>
-    <div class="tl">
-      <div id="tlfill"></div>
-      <div class="stop"><div class="wk">Week 1</div><h3>Foundations</h3>
-        <div class="tgrid"><a class="tshot" href="https://mayahelmi.github.io/HTML-Task/HTMLForm.html" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-01-html-form.jpg" alt="Rendered result of the HTML form task — opens the live page" loading="lazy"></span><span class="tsbar"><span>HTML task</span></span></a><a class="tshot" href="https://mayahelmi.github.io/CSS-Task/FloatingArticles.html" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-01-css-floating-articles.jpg" alt="Rendered result of the CSS floating-articles task — opens the live page" loading="lazy"></span><span class="tsbar"><span>CSS exercises</span></span></a><a class="tshot" href="https://mayahelmi.github.io/nth-child/" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-01-selectors-practice.jpg" alt="Screenshot of the selector practice page — opens the live task" loading="lazy"></span><span class="tsbar"><span>Selectors practice</span></span></a></div></div>
-      <div class="stop"><div class="wk">Week 2</div><h3>Responsive web</h3>
-        <div class="tgrid"><a class="tshot" href="https://mayahelmi.github.io/maya-portfolio/" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-02-portfolio-maya.jpg" alt="Screenshot of the personal portfolio website — opens the live task" loading="lazy"></span><span class="tsbar"><span>Portfolio — Maya</span></span></a><a class="tshot" href="https://noureddin004.github.io/Protfolio/" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-02-portfolio-noureddin.jpg" alt="Screenshot of NourEddin's portfolio website — opens the live site" loading="lazy"></span><span class="tsbar"><span>Portfolio — NourEddin</span></span></a><a class="tshot" href="https://mayahelmi.github.io/Flex-and-Grid/Task1.html" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-02-flexbox-grid.jpg" alt="Rendered result of the Grid page-layout task — opens the live page" loading="lazy"></span><span class="tsbar"><span>Flexbox &amp; Grid</span></span></a></div></div>
-      <div class="stop"><div class="wk">Week 3</div><h3>Bootstrap + JavaScript</h3>
-        <div class="tgrid"><a class="tshot" href="https://mayahelmi.github.io/bootstrap-task/" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-03-bootstrap-replication.jpg" alt="Screenshot of the Bootstrap website replication — opens the live task" loading="lazy"></span><span class="tsbar"><span>Website replication</span></span></a><a class="tshot" href="https://mayahelmi.github.io/Caffe-Z/" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-03-cafe-ordering.jpg" alt="Screenshot of the cafe ordering page — opens the live task" loading="lazy"></span><span class="tsbar"><span>Ordering page</span></span></a><a class="tshot" href="https://mayahelmi.github.io/JS-Exercises/" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-03-js-exercises.jpg" alt="Screenshot of the JavaScript exercises page — opens the live task" loading="lazy"></span><span class="tsbar"><span>JS exercises</span></span></a></div></div>
-      <div class="stop"><div class="wk">Week 4</div><h3>JavaScript logic</h3>
-        <div class="tgrid"><a class="tshot" href="https://mayahelmi.github.io/JS-Loop-Task/" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-04-loops-functions.jpg" alt="Screenshot of the cafe ordering task built with loops and functions — opens the live task" loading="lazy"></span><span class="tsbar"><span>Loops &amp; functions task</span></span></a><a class="tshot" href="https://mayahelmi.github.io/JS-Exercises2/" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-04-js-exercises-2.jpg" alt="Screenshot of the second JavaScript exercise set — opens the live task" loading="lazy"></span><span class="tsbar"><span>More exercises</span></span></a></div></div>
-      <div class="stop"><div class="wk">Week 5</div><h3>Interactive applications</h3>
-        <div class="tgrid"><a class="tshot" href="https://mayahelmi.github.io/Hospital-System/" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-05-patient-registration.jpg" alt="Screenshot of the patient registration application — opens the live task" loading="lazy"></span><span class="tsbar"><span>Patient registration</span></span></a><a class="tshot" href="https://mayahelmi.github.io/dom-exercise-js/" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-05-dom-exercise.jpg" alt="Screenshot of the DOM exercise page — opens the live task" loading="lazy"></span><span class="tsbar"><span>DOM exercise</span></span></a></div></div>
-      <div class="stop"><div class="wk">Week 6</div><h3>APIs + Firebase</h3>
-        <p class="wkflow">API <i>&rarr;</i> Fetch <i>&rarr;</i> CRUD <i>&rarr;</i> Firebase</p>
-        <div class="tgrid"><a class="tshot" href="https://mayahelmi.github.io/Higher-Order-Function/" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-06-higher-order-functions.jpg" alt="Screenshot of the higher-order functions page — opens the live task" loading="lazy"></span><span class="tsbar"><span>Higher-order functions</span></span></a><a class="tshot" href="https://github.com/MayaHelmi/fakestoreapi" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-06-fake-store-api.jpg" alt="Screenshot of the Fake Store API task — opens its source on GitHub" loading="lazy"></span><span class="tsbar"><span>API task</span></span></a></div></div>
-      <div class="stop"><div class="wk">Week 7</div><h3>PHP</h3>
-        <div class="tgrid"><a class="tshot" href="https://mayahelmi.github.io/PHP-Basics/#03-loops-09-multiplication-table" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-07-php-multiplication-table.jpg" alt="Rendered output of the PHP multiplication-table exercise — opens the live reference page" loading="lazy"></span><span class="tsbar"><span>PHP exercises</span></span></a><a class="tshot" href="https://github.com/MayaHelmi/PHP-Forms" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-07-php-ticket-form.jpg" alt="Screenshot of the PHP ticket-booking form — opens its source on GitHub" loading="lazy"></span><span class="tsbar"><span>Form task</span></span></a></div></div>
-      <div class="stop"><div class="wk">Week 8</div><h3>Final project — charity donation platform</h3>
-        <div class="tgrid flowrow"><a class="tshot" href="https://www.figma.com/design/tMWo0XexJzQcxXI9hLDwaO/HopeBridge?node-id=4405-3140&amp;t=spP08T9CFm9fDGmC-1" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-08-hopebridge-wireframes.jpg" alt="The platform's sixteen wireframe screens in Figma — opens the Figma file" loading="lazy"></span><span class="tsbar"><span>Wireframes — Figma</span></span></a><i class="fla" aria-hidden="true">&rarr;</i><a class="tshot" href="https://www.figma.com/design/tMWo0XexJzQcxXI9hLDwaO/HopeBridge?node-id=0-1&amp;p=f&amp;t=spP08T9CFm9fDGmC-1" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-08-hopebridge-mockups.jpg" alt="The platform's high-fidelity mockup screens in Figma — opens the Figma file" loading="lazy"></span><span class="tsbar"><span>Mockups — Figma</span></span></a><i class="fla" aria-hidden="true">&rarr;</i><a class="tshot" href="https://mayahelmi.github.io/hopebridge-charity-platform/" target="_blank" rel="noopener"><span class="tsimg"><img src="assets/images/week-08-hopebridge-live.jpg" alt="Four pages of the live charity platform — opens the live site" loading="lazy"></span><span class="tsbar"><span>Platform — live</span></span></a></div></div>
-      <div class="stop soon"><div class="wk">Next</div><h3>Upcoming weeks</h3>
-        <div class="chips" style="border-top:0;padding-top:0;margin-top:.9rem"><span class="chip"><img src="assets/icons/react.svg" alt="">React</span><span class="chip"><img src="assets/icons/laravel.svg" alt="">Laravel</span></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="practice">
-  <h2 class="eyebrow rv">03 · Formal Training Received</h2>
-  <div class="fbd">
-    <article class="fcard rv"><h3>Front End</h3>
-      <ul class="flist"><li>HTML5 &amp; Semantic Structure</li><li>CSS Styling &amp; Layout</li><li>Responsive Web Design</li><li>Bootstrap &amp; Tailwind CSS</li><li>JavaScript Programming</li><li>UX Research &amp; Wireframing</li><li>Git &amp; GitHub</li><li class="soonitem">React <em>next</em></li></ul>
-      <div class="chips"><span class="chlbl">Tools</span><span class="chip"><img src="assets/icons/html5.svg" alt="">HTML5</span><span class="chip"><img src="assets/icons/css3.svg" alt="">CSS3</span><span class="chip"><img src="assets/icons/javascript.svg" alt="">JavaScript</span><span class="chip"><img src="assets/icons/bootstrap.svg" alt="">Bootstrap</span><span class="chip"><img src="assets/icons/tailwindcss.svg" alt="">Tailwind</span><span class="chip"><img src="assets/icons/figma.svg" alt="">Figma</span><span class="chip"><img src="assets/icons/trello.svg" alt="">Trello</span><span class="chip"><img src="assets/icons/git.svg" alt="">Git</span><span class="chip"><img src="assets/icons/github.svg" alt="">GitHub</span></div></article>
-    <article class="fcard rv d1"><h3>Back End</h3>
-      <ul class="flist"><li>PHP &amp; Back-End Development</li><li>Form Handling &amp; Validation</li><li>APIs &amp; Firebase</li><li class="soonitem">Laravel <em>next</em></li></ul>
-      <div class="chips"><span class="chlbl">Tools</span><span class="chip"><img src="assets/icons/php.svg" alt="">PHP</span><span class="chip"><img src="assets/icons/firebase.svg" alt="">Firebase</span></div></article>
-    <article class="fcard rv d2"><h3>Database</h3>
-      <ul class="flist"><li>Database Design &amp; ERDs</li><li>MySQL Implementation</li></ul>
-      <div class="chips"><span class="chlbl">Tools</span><span class="chip"><img src="assets/icons/mysql.svg" alt="">MySQL</span><span class="chip">ERD</span></div></article>
-  </div>
-</section>
-
-<section id="outcome">
-  <p class="eyebrow rv">04 · Conclusion</p>
-  <h2 class="rv d1">From a first HTML page to a live full-stack platform.</h2>
-  <h3 class="subhead rv">The journey</h3>
-  <p class="subnote rv d1">Each week added a layer &mdash; from the first markup to a shipped product.</p>
-  <div class="wfcard rv d1"><ul class="jchain" aria-label="The eight-week journey from HTML to a live platform">
-    <li><span class="jic"><img src="assets/icons/html5.svg" alt=""></span><span class="jlbl">HTML</span></li>
-    <li><span class="jic"><img src="assets/icons/css3.svg" alt=""></span><span class="jlbl">CSS</span></li>
-    <li><span class="jic"><img src="assets/icons/javascript.svg" alt=""></span><span class="jlbl">JavaScript</span></li>
-    <li><span class="jic"><img src="assets/icons/php.svg" alt=""></span><span class="jlbl">PHP</span></li>
-    <li><span class="jic"><img src="assets/icons/mysql.svg" alt=""></span><span class="jlbl">MySQL</span></li>
-    <li class="live"><span class="jic"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span><span class="jlbl">Live platform</span></li>
-  </ul></div>
-
-  <h3 class="subhead rv">Process</h3>
-  <p class="subnote rv d1">Every task ran through the same five-step loop &mdash; research the concept, build it, get it reviewed, improve it, then present it.</p>
-  <div class="wfcard rv">
-  <div class="wf rv" role="img" aria-label="Development workflow: research, build, review, improve, present - repeated every week">
-    <div class="wfline" aria-hidden="true"><span class="wffill"></span></div>
-    <ol class="wfstages">
-      <li><svg class="ic wfic" aria-hidden="true"><use href="#i-search"/></svg><span class="wfl">Research</span></li>
-      <li><svg class="ic wfic" aria-hidden="true"><use href="#i-code"/></svg><span class="wfl">Build</span></li>
-      <li><svg class="ic wfic" aria-hidden="true"><use href="#i-eye"/></svg><span class="wfl">Review</span></li>
-      <li><svg class="ic wfic" aria-hidden="true"><use href="#i-loop"/></svg><span class="wfl">Improve</span></li>
-      <li><svg class="ic wfic" aria-hidden="true"><use href="#i-present"/></svg><span class="wfl">Present</span></li>
-    </ol>
-  </div>
-  </div>
-  <p class="concpara rv d2">The hardest part was the final project &mdash; bringing everything together into one working product on a real deadline.</p>
-  <p class="concfacts rv d3">8 weeks &middot; every task on GitHub</p>
-
-</section>
-
-<section id="qa">
-  <div class="inner">
-    <p class="eyebrow rv">05 · Q &amp; A</p>
-    <div class="qhead rv d1"><h2>Questions<em>?</em></h2><button class="yaybtn" id="yay" type="button" aria-label="Confetti — we are done"><svg viewBox="0 0 64 64" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 54 L22 26 L38 42 Z" fill="#FFF3E4"/><path d="M14 44 L30 34 M12 50 L34 38" stroke="#E8830A" stroke-width="2" stroke-linecap="round"/><g stroke="#FFF3E4" stroke-width="2.4" stroke-linecap="round"><path d="M40 24 L46 18"/><path d="M44 32 L52 30"/><path d="M34 16 L36 8"/></g><rect x="48" y="10" width="6" height="6" rx="1" fill="#54300A" transform="rotate(18 51 13)"/><rect x="54" y="38" width="6" height="6" rx="1" fill="#FFF3E4" transform="rotate(-14 57 41)"/><rect x="24" y="6" width="5" height="5" rx="1" fill="#FFD9B0" transform="rotate(28 26 8)"/><circle cx="46" cy="44" r="2.6" fill="#FFD9B0"/><circle cx="56" cy="22" r="2.4" fill="#FFF3E4"/></svg></button></div>
-    <footer>
-      <div class="fnames">
-        <span>Maya Helmi · 202210413 · Software Engineering</span>
-        <span>NourEddin Abu Salhieh · 202211108 · Data Science &amp; AI</span>
-      </div>
-      <span>Orange Digital Center — Coding Academy by Orange · Amman</span>
-    </footer>
-  </div>
-</section>
-</main>
-
-<script>
-document.documentElement.classList.add('js');
-(function(){
-  var ghm=document.querySelector('.ghmenu'), ghb=document.querySelector('.ghbtn');
-  function setGithubMenuOpen(open){
-    ghm.classList.toggle('open',open);
-    ghb.setAttribute('aria-expanded',String(open));
-  }
-  if(ghb&&ghm){
-    ghb.addEventListener('click',function(e){
-      e.stopPropagation();
-      setGithubMenuOpen(!ghm.classList.contains('open'));
-    });
-    ghm.addEventListener('focusout',function(e){
-      if(!ghm.contains(e.relatedTarget)) setGithubMenuOpen(false);
-    });
-    document.addEventListener('click',function(e){
-      if(!ghm.contains(e.target)) setGithubMenuOpen(false);
-    });
-    document.addEventListener('keydown',function(e){
-      if(e.key==='Escape'&&ghm.classList.contains('open')){
-        e.preventDefault();
-        setGithubMenuOpen(false);
-        ghb.focus();
+<html lang="en" class="scroll-smooth motion-reduce:scroll-auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Full Stack Web Development · Field Training at Orange</title>
+    <meta
+      name="description"
+      content="Eight weeks of full-stack web development field training at Orange Digital Center · Coding Academy, Amman — Applied Science Private University."
+    />
+    <link
+      rel="canonical"
+      href="https://mayahelmi.github.io/field-training-presentation/"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍊</text></svg>"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Full Stack Web Development · Field Training at Orange"
+    />
+    <meta
+      property="og:description"
+      content="From a first HTML page to a live full-stack platform — our field training at Orange Digital Center, Coding Academy, Amman."
+    />
+    <meta
+      property="og:url"
+      content="https://mayahelmi.github.io/field-training-presentation/"
+    />
+    <meta
+      property="og:image"
+      content="https://mayahelmi.github.io/field-training-presentation/og-orange-jordan.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Full Stack Web Development field training at Orange Digital Center"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://mayahelmi.github.io/field-training-presentation/og-orange-jordan.jpg"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Full Stack Web Development Field Training at Orange",
+        "url": "https://mayahelmi.github.io/field-training-presentation/",
+        "description": "Eight-week full-stack web development field training at Orange Digital Center — Coding Academy, Amman.",
+        "author": [
+          { "@type": "Person", "name": "Maya Helmi" },
+          { "@type": "Person", "name": "NourEddin Abu Salhieh" }
+        ]
       }
-    });
-  }
-  var yay=document.getElementById('yay');
-  if(yay){ yay.addEventListener('click',function(){
-    var cv=document.createElement('canvas'); cv.className='confetti';
-    cv.width=innerWidth; cv.height=innerHeight; document.body.appendChild(cv);
-    var ctx=cv.getContext('2d');
-    var r=yay.getBoundingClientRect(), ox=r.left+r.width/2, oy=r.top+r.height/2;
-    var cols=['#FF7900','#FFF3E4','#54300A','#FFD9B0','#1D1D1B'];
-    var ps=[]; for(var i=0;i<170;i++){ var a=Math.random()*Math.PI*2, v=6+Math.random()*9;
-      ps.push({x:ox,y:oy,vx:Math.cos(a)*v,vy:Math.sin(a)*v-7,w:5+Math.random()*6,h:8+Math.random()*8,rot:Math.random()*Math.PI,vr:(Math.random()-.5)*.3,c:cols[i%cols.length]}); }
-    var t0=null;
-    function step(t){ if(!t0)t0=t; ctx.clearRect(0,0,cv.width,cv.height);
-      ps.forEach(function(p){ p.vy+=0.35; p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr;
-        ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot); ctx.fillStyle=p.c; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore(); });
-      if(t-t0<3000) requestAnimationFrame(step); else cv.remove(); }
-    requestAnimationFrame(step);
-  }); }
-  var bar=document.getElementById('bar');
-  var tl=document.querySelector('.tl'), fill=document.getElementById('tlfill');
-  var secs=[].slice.call(document.querySelectorAll('section'));
-  var links=[].slice.call(document.querySelectorAll('nav .links a[href^="#"]'));
+    </script>
+    <script src="assets/js/main.js" defer></script>
+  </head>
 
-  /* Add reveal behavior only where it is not already present in the markup. */
-  [].slice.call(document.querySelectorAll('.tshot,.fla,.flist li,footer,.wkflow,.jchain li')).forEach(function(el){el.classList.add('rv')});
-  [].slice.call(document.querySelectorAll('.tgrid,.flist,.jchain')).forEach(function(g){
-    [].slice.call(g.children).forEach(function(ch,i){ if(ch.classList.contains('rv')) ch.style.transitionDelay=(i*.09)+'s'; });
-  });
+  <body
+    class="overflow-x-hidden bg-white font-['Helvetica_Neue',Helvetica,Arial,sans-serif] text-base leading-6 tracking-[-0.006em] text-black antialiased selection:bg-[#ff7900] selection:text-white"
+  >
+    <div
+      data-scroll-progress
+      class="fixed left-0 top-0 z-50 h-1 w-0 bg-[#ff7900]"
+      aria-hidden="true"
+    ></div>
 
-  var rvPending=[].slice.call(document.querySelectorAll('.rv'));
-  function currentSectionIndex(){
-    var current=0;
-    secs.forEach(function(sc,i){if(sc.getBoundingClientRect().top<=innerHeight*.4)current=i;});
-    return current;
-  }
-  function reveal(){
-    var vh=innerHeight;
-    var atBottom = innerHeight + scrollY >= document.body.scrollHeight - 2;
-    rvPending=rvPending.filter(function(el){
-      if(atBottom || el.getBoundingClientRect().top < vh*.88){ el.classList.add('in'); return false } return true });
-    if(tl){
-      var r=tl.getBoundingClientRect();
-      fill.style.height=(Math.min(1,Math.max(0,(vh*.72-r.top)/r.height))*100)+'%';
-    }
-    var h=document.documentElement;
-    bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
-    var current=secs[currentSectionIndex()];
-    links.forEach(function(a){
-      a.classList.toggle('on',current&&a.getAttribute('href')==='#'+current.id);
-    });
-  }
-  var last=0;
-  function onScroll(){ var now=Date.now(); if(now-last<40)return; last=now; reveal(); }
-  addEventListener('scroll',onScroll,{passive:true});
-  addEventListener('resize',onScroll,{passive:true});
-  reveal();
-  setTimeout(reveal,350);
-})();
-</script>
+    <nav
+      class="fixed inset-x-0 top-1 z-40 bg-black px-[clamp(1.25rem,5vw,4rem)] py-3 text-white"
+      aria-label="Main navigation"
+    >
+      <div class="mx-auto flex w-full max-w-[1180px] items-center gap-6">
+        <span class="hidden shrink-0 text-xs font-medium md:block"
+          >Maya &amp; NourEddin — Field Training</span
+        >
+        <div
+          class="flex min-w-0 flex-1 items-center gap-5 overflow-x-auto whitespace-nowrap [scrollbar-width:none]"
+        >
+          <a
+            data-nav-link
+            href="#hero"
+            class="py-1 text-xs font-medium transition-colors hover:text-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900]"
+            >Start</a
+          >
+          <a
+            data-nav-link
+            href="#workflow"
+            class="py-1 text-xs font-medium transition-colors hover:text-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900]"
+            >How we worked</a
+          >
+          <a
+            data-nav-link
+            href="#tasks"
+            class="py-1 text-xs font-medium transition-colors hover:text-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900]"
+            >Tasks</a
+          >
+          <a
+            data-nav-link
+            href="#training"
+            class="py-1 text-xs font-medium transition-colors hover:text-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900]"
+            >Formal Training</a
+          >
+        </div>
+        <div
+          data-github-menu
+          data-open="false"
+          class="relative shrink-0 border-l border-[#555] pl-4"
+        >
+          <button
+            data-github-button
+            type="button"
+            aria-expanded="false"
+            aria-controls="github-links"
+            class="flex cursor-pointer items-center gap-2 text-xs font-medium transition-colors hover:text-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900]"
+          >
+            <img
+              src="assets/icons/github.svg"
+              width="14"
+              height="14"
+              class="invert"
+              alt=""
+            />
+            GitHub <span class="text-[#f16e00]" aria-hidden="true">▾</span>
+          </button>
+          <div
+            data-github-dropdown
+            id="github-links"
+            class="absolute right-0 top-[calc(100%+0.55rem)] hidden min-w-60 border border-[#b3b3b3] bg-white p-1 text-black shadow-xl"
+          >
+            <a
+              href="https://github.com/MayaHelmi"
+              target="_blank"
+              rel="noopener"
+              class="flex items-center justify-between gap-4 px-3 py-2 text-xs font-medium tracking-wide hover:bg-[#eee] hover:text-[#f16e00] focus-visible:bg-[#eee] focus-visible:text-[#f16e00]"
+              >Maya Helmi <span aria-hidden="true">↗</span></a
+            >
+            <a
+              href="https://github.com/NourEddin004"
+              target="_blank"
+              rel="noopener"
+              class="flex items-center justify-between gap-4 px-3 py-2 text-xs font-medium tracking-wide hover:bg-[#eee] hover:text-[#f16e00] focus-visible:bg-[#eee] focus-visible:text-[#f16e00]"
+              >NourEddin Abu Salhieh <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
 
-</body>
+    <main>
+      <section
+        id="hero"
+        class="flex min-h-svh items-center border-b-2 border-[#b3b3b3] bg-[#eee] px-[clamp(1.25rem,5vw,4rem)] pb-[clamp(5rem,11vh,8rem)] pt-32"
+      >
+        <div
+          class="mx-auto grid w-full max-w-[1180px] grid-cols-1 gap-x-[clamp(2.5rem,5vw,4rem)] gap-y-12 lg:grid-cols-[minmax(0,1fr)_20rem]"
+        >
+          <div class="text-center lg:text-left">
+            <div
+              class="mb-9 flex flex-wrap items-center justify-center gap-6 lg:justify-start"
+            >
+              <img
+                src="asu-portal-logo-cropped.png"
+                width="90"
+                height="90"
+                class="h-[60px] w-[60px] object-contain sm:h-[90px] sm:w-[90px]"
+                alt="Applied Science Private University"
+              />
+              <img
+                src="orange-official.svg"
+                width="90"
+                height="90"
+                class="h-[60px] w-[60px] object-contain sm:h-[90px] sm:w-[90px]"
+                alt="Orange Jordan"
+              />
+            </div>
+            <h1
+              class="text-balance text-[clamp(2.8rem,7vw,5.6rem)] font-bold leading-[0.98] tracking-[-0.035em]"
+            >
+              Full Stack Web Development
+            </h1>
+            <p
+              class="mt-5 text-[clamp(1rem,1.6vw,1.2rem)] text-[#595959] lg:whitespace-nowrap"
+            >
+              <em class="not-italic text-[#f16e00]"
+                >Our Field Training at Orange Digital Center · Coding Academy ·
+                Amman</em
+              >
+            </p>
+            <div
+              class="mt-8 grid gap-3 sm:flex sm:flex-wrap sm:justify-center lg:justify-start"
+            >
+              <a
+                href="#tasks"
+                class="inline-flex min-h-12 items-center justify-center rounded-md border-2 border-[#ff7900] bg-[#ff7900] px-5 py-3 font-bold text-white transition-colors hover:border-black hover:bg-black focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900]"
+                >Explore the tasks</a
+              >
+              <a
+                href="https://mayahelmi.github.io/hopebridge-charity-platform/"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex min-h-12 items-center justify-center rounded-md border-2 border-black bg-black px-5 py-3 font-bold text-white transition-colors hover:bg-white hover:text-black focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900]"
+                >View HopeBridge</a
+              >
+            </div>
+          </div>
+          <aside
+            class="overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-[#b3b3b3]"
+          >
+            <div
+              class="grid gap-px sm:grid-cols-2 lg:flex lg:h-full lg:flex-col"
+            >
+              <div class="flex flex-1 flex-col justify-center bg-white p-5">
+                <p
+                  class="mb-1 text-[0.64rem] font-medium uppercase tracking-[0.05em] text-[#666]"
+                >
+                  Prepared by
+                </p>
+                <p class="text-[0.93rem]">Maya Helmi</p>
+                <p class="text-[0.93rem]">NourEddin Abu Salhieh</p>
+              </div>
+              <div class="flex flex-1 flex-col justify-center bg-white p-5">
+                <p
+                  class="mb-1 text-[0.64rem] font-medium uppercase tracking-[0.05em] text-[#666]"
+                >
+                  Academic Supervisor
+                </p>
+                <p class="text-[0.93rem]">Dr. Bashar Alshouha</p>
+              </div>
+              <div class="flex flex-1 flex-col justify-center bg-white p-5">
+                <p
+                  class="mb-1 text-[0.64rem] font-medium uppercase tracking-[0.05em] text-[#666]"
+                >
+                  Training Supervisor
+                </p>
+                <p class="text-[0.93rem]">Rawan Abuseini</p>
+              </div>
+              <div class="flex flex-1 flex-col justify-center bg-white p-5">
+                <p
+                  class="mb-1 text-[0.64rem] font-medium uppercase tracking-[0.05em] text-[#666]"
+                >
+                  Company
+                </p>
+                <p class="text-[0.93rem]">
+                  Orange Digital Center — Coding Academy by Orange
+                </p>
+              </div>
+              <div class="flex flex-1 flex-col justify-center bg-white p-5">
+                <p
+                  class="mb-1 text-[0.64rem] font-medium uppercase tracking-[0.05em] text-[#666]"
+                >
+                  Training Date
+                </p>
+                <p class="text-[0.93rem]">19/7/2026 – 13/9/2026</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section
+        id="workflow"
+        class="px-[clamp(1.25rem,5vw,4rem)] py-[clamp(5rem,11vh,8rem)]"
+      >
+        <div class="mx-auto w-full max-w-[1180px]">
+          <h2
+            class="mb-[clamp(1.25rem,2.5vw,2rem)] text-[clamp(1.05rem,2.1vw,1.45rem)] font-medium uppercase tracking-[0.2em] text-[#f16e00]"
+          >
+            01 · How we worked
+          </h2>
+          <div class="grid gap-5 md:grid-cols-2">
+            <article
+              class="overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white transition-transform duration-300 hover:-translate-y-1 hover:border-[#ff7900] motion-reduce:transition-none"
+            >
+              <img
+                src="assets/images/intro-challenge-project-based.webp"
+                width="2172"
+                height="724"
+                loading="lazy"
+                decoding="async"
+                class="h-[180px] w-full border-b border-[#b3b3b3] object-cover"
+                alt="Four trainee teams working together on their assigned development areas"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold tracking-[-0.025em]">
+                  Challenge &amp; Project-Based
+                </h3>
+                <p class="mt-2 text-[#595959]">
+                  Practical tasks + independent research.
+                </p>
+              </div>
+            </article>
+            <article
+              class="overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white transition-transform duration-300 hover:-translate-y-1 hover:border-[#ff7900] motion-reduce:transition-none"
+            >
+              <img
+                src="assets/images/intro-team-environment.webp"
+                width="2164"
+                height="727"
+                loading="lazy"
+                decoding="async"
+                class="h-[180px] w-full border-b border-[#b3b3b3] object-cover"
+                alt="Daily stand-up meeting with Maya speaking to the team and supervisors"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold tracking-[-0.025em]">
+                  Team Environment
+                </h3>
+                <p class="mt-2 text-[#595959]">
+                  Agile teamwork — daily stand-ups + shared problem solving.
+                </p>
+              </div>
+            </article>
+            <article
+              class="overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white transition-transform duration-300 hover:-translate-y-1 hover:border-[#ff7900] motion-reduce:transition-none"
+            >
+              <img
+                src="assets/images/intro-github-workflow.webp"
+                width="2164"
+                height="727"
+                loading="lazy"
+                decoding="async"
+                class="h-[180px] w-full border-b border-[#b3b3b3] object-cover"
+                alt="Supervisor reviewing code with a trainee beside a GitHub workflow diagram"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold tracking-[-0.025em]">
+                  GitHub Workflow
+                </h3>
+                <p class="mt-2 text-[#595959]">
+                  Version control + code review.
+                </p>
+              </div>
+            </article>
+            <article
+              class="overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white transition-transform duration-300 hover:-translate-y-1 hover:border-[#ff7900] motion-reduce:transition-none"
+            >
+              <img
+                src="assets/images/intro-present-defend.webp"
+                width="2172"
+                height="724"
+                loading="lazy"
+                decoding="async"
+                class="h-[180px] w-full border-b border-[#b3b3b3] object-cover"
+                alt="Maya presenting a project to supervisors and trainees in the training room"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold tracking-[-0.025em]">
+                  Present &amp; Defend
+                </h3>
+                <p class="mt-2 text-[#595959]">Weekly project presentations.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="tasks"
+        class="bg-[#eee] px-[clamp(1.25rem,5vw,4rem)] py-[clamp(5rem,11vh,8rem)]"
+      >
+        <div class="mx-auto w-full max-w-[1180px]">
+          <h2
+            class="mb-[clamp(1.25rem,2.5vw,2rem)] text-[clamp(1.05rem,2.1vw,1.45rem)] font-medium uppercase tracking-[0.2em] text-[#f16e00]"
+          >
+            02 · Tasks
+          </h2>
+          <div data-timeline class="relative mt-12 pl-6 md:pl-[150px]">
+            <div
+              class="absolute bottom-1.5 left-[5px] top-1.5 w-px bg-[#d9d0c4] md:left-10"
+              aria-hidden="true"
+            ></div>
+            <div
+              data-timeline-fill
+              class="absolute left-[5px] top-1.5 h-0 w-px bg-[#ff7900] md:left-10"
+              aria-hidden="true"
+            ></div>
+
+            <article
+              class="relative mb-[clamp(2rem,4.5vw,3.2rem)] rounded-md border-2 border-[#b3b3b3] bg-white p-[clamp(1.3rem,3.5vw,2.6rem)] transition-shadow hover:shadow-xl motion-reduce:transition-none"
+            >
+              <p
+                class="mb-2 inline-block bg-[#eee] px-2 py-1 text-[0.66rem] font-medium uppercase tracking-[0.18em] text-[#f16e00] md:absolute md:left-[-110px] md:top-10 md:-translate-x-1/2"
+              >
+                Week 1
+              </p>
+              <h3 class="text-xl font-bold">Foundations</h3>
+              <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <a
+                  href="https://mayahelmi.github.io/HTML-Task/HTMLForm.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-01-html-form.jpg"
+                      alt="Rendered result of the HTML form task"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >HTML task</span
+                  ></a
+                >
+                <a
+                  href="https://mayahelmi.github.io/CSS-Task/FloatingArticles.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-01-css-floating-articles.jpg"
+                      alt="Rendered result of the CSS floating-articles task"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >CSS exercises</span
+                  ></a
+                >
+                <a
+                  href="https://mayahelmi.github.io/nth-child/"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-01-selectors-practice.jpg"
+                      alt="Screenshot of the selector practice page"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >Selectors practice</span
+                  ></a
+                >
+              </div>
+            </article>
+
+            <article
+              class="relative mb-[clamp(2rem,4.5vw,3.2rem)] rounded-md border-2 border-[#b3b3b3] bg-white p-[clamp(1.3rem,3.5vw,2.6rem)] transition-shadow hover:shadow-xl motion-reduce:transition-none"
+            >
+              <p
+                class="mb-2 inline-block bg-[#eee] px-2 py-1 text-[0.66rem] font-medium uppercase tracking-[0.18em] text-[#f16e00] md:absolute md:left-[-110px] md:top-10 md:-translate-x-1/2"
+              >
+                Week 2
+              </p>
+              <h3 class="text-xl font-bold">Responsive web</h3>
+              <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <a
+                  href="https://mayahelmi.github.io/maya-portfolio/"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-02-portfolio-maya.jpg"
+                      alt="Screenshot of Maya's portfolio website"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >Portfolio — Maya</span
+                  ></a
+                >
+                <a
+                  href="https://noureddin004.github.io/Protfolio/"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-02-portfolio-noureddin.jpg"
+                      alt="Screenshot of NourEddin's portfolio website"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >Portfolio — NourEddin</span
+                  ></a
+                >
+                <a
+                  href="https://mayahelmi.github.io/Flex-and-Grid/Task1.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-02-flexbox-grid.jpg"
+                      alt="Rendered result of the Flexbox and Grid task"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >Flexbox &amp; Grid</span
+                  ></a
+                >
+              </div>
+            </article>
+
+            <article
+              class="relative mb-[clamp(2rem,4.5vw,3.2rem)] rounded-md border-2 border-[#b3b3b3] bg-white p-[clamp(1.3rem,3.5vw,2.6rem)] transition-shadow hover:shadow-xl motion-reduce:transition-none"
+            >
+              <p
+                class="mb-2 inline-block bg-[#eee] px-2 py-1 text-[0.66rem] font-medium uppercase tracking-[0.18em] text-[#f16e00] md:absolute md:left-[-110px] md:top-10 md:-translate-x-1/2"
+              >
+                Week 3
+              </p>
+              <h3 class="text-xl font-bold">Bootstrap + JavaScript</h3>
+              <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <a
+                  href="https://mayahelmi.github.io/bootstrap-task/"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-03-bootstrap-replication.jpg"
+                      alt="Screenshot of the Bootstrap website replication"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >Website replication</span
+                  ></a
+                >
+                <a
+                  href="https://mayahelmi.github.io/Caffe-Z/"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-03-cafe-ordering.jpg"
+                      alt="Screenshot of the cafe ordering page"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >Ordering page</span
+                  ></a
+                >
+                <a
+                  href="https://mayahelmi.github.io/JS-Exercises/"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-03-js-exercises.jpg"
+                      alt="Screenshot of the JavaScript exercises page"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >JS exercises</span
+                  ></a
+                >
+              </div>
+            </article>
+
+            <article
+              class="relative mb-[clamp(2rem,4.5vw,3.2rem)] rounded-md border-2 border-[#b3b3b3] bg-white p-[clamp(1.3rem,3.5vw,2.6rem)] transition-shadow hover:shadow-xl motion-reduce:transition-none"
+            >
+              <p
+                class="mb-2 inline-block bg-[#eee] px-2 py-1 text-[0.66rem] font-medium uppercase tracking-[0.18em] text-[#f16e00] md:absolute md:left-[-110px] md:top-10 md:-translate-x-1/2"
+              >
+                Week 4
+              </p>
+              <h3 class="text-xl font-bold">JavaScript logic</h3>
+              <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <a
+                  href="https://mayahelmi.github.io/JS-Loop-Task/"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-04-loops-functions.jpg"
+                      alt="Screenshot of the loops and functions task"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >Loops &amp; functions</span
+                  ></a
+                >
+                <a
+                  href="https://mayahelmi.github.io/JS-Exercises2/"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-04-js-exercises-2.jpg"
+                      alt="Screenshot of the second JavaScript exercise set"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >More exercises</span
+                  ></a
+                >
+              </div>
+            </article>
+
+            <article
+              class="relative mb-[clamp(2rem,4.5vw,3.2rem)] rounded-md border-2 border-[#b3b3b3] bg-white p-[clamp(1.3rem,3.5vw,2.6rem)] transition-shadow hover:shadow-xl motion-reduce:transition-none"
+            >
+              <p
+                class="mb-2 inline-block bg-[#eee] px-2 py-1 text-[0.66rem] font-medium uppercase tracking-[0.18em] text-[#f16e00] md:absolute md:left-[-110px] md:top-10 md:-translate-x-1/2"
+              >
+                Week 5
+              </p>
+              <h3 class="text-xl font-bold">Interactive applications</h3>
+              <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <a
+                  href="https://mayahelmi.github.io/Hospital-System/"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-05-patient-registration.jpg"
+                      alt="Screenshot of the patient registration application"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >Patient registration</span
+                  ></a
+                >
+                <a
+                  href="https://mayahelmi.github.io/dom-exercise-js/"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-05-dom-exercise.jpg"
+                      alt="Screenshot of the DOM exercise page"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >DOM exercise</span
+                  ></a
+                >
+              </div>
+            </article>
+
+            <article
+              class="relative mb-[clamp(2rem,4.5vw,3.2rem)] rounded-md border-2 border-[#b3b3b3] bg-white p-[clamp(1.3rem,3.5vw,2.6rem)] transition-shadow hover:shadow-xl motion-reduce:transition-none"
+            >
+              <p
+                class="mb-2 inline-block bg-[#eee] px-2 py-1 text-[0.66rem] font-medium uppercase tracking-[0.18em] text-[#f16e00] md:absolute md:left-[-110px] md:top-10 md:-translate-x-1/2"
+              >
+                Week 6
+              </p>
+              <h3 class="text-xl font-bold">APIs + Firebase</h3>
+              <p
+                class="mt-1 text-xs font-medium tracking-[0.05em] text-[#595959]"
+              >
+                API <span class="text-[#ff7900]">→</span> Fetch
+                <span class="text-[#ff7900]">→</span> CRUD
+                <span class="text-[#ff7900]">→</span> Firebase
+              </p>
+              <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <a
+                  href="https://mayahelmi.github.io/Higher-Order-Function/"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-06-higher-order-functions.jpg"
+                      alt="Screenshot of the higher-order functions page"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >Higher-order functions</span
+                  ></a
+                >
+                <a
+                  href="https://github.com/MayaHelmi/fakestoreapi"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-06-fake-store-api.jpg"
+                      alt="Screenshot of the Fake Store API task"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >API task</span
+                  ></a
+                >
+              </div>
+            </article>
+
+            <article
+              class="relative mb-[clamp(2rem,4.5vw,3.2rem)] rounded-md border-2 border-[#b3b3b3] bg-white p-[clamp(1.3rem,3.5vw,2.6rem)] transition-shadow hover:shadow-xl motion-reduce:transition-none"
+            >
+              <p
+                class="mb-2 inline-block bg-[#eee] px-2 py-1 text-[0.66rem] font-medium uppercase tracking-[0.18em] text-[#f16e00] md:absolute md:left-[-110px] md:top-10 md:-translate-x-1/2"
+              >
+                Week 7
+              </p>
+              <h3 class="text-xl font-bold">PHP</h3>
+              <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <a
+                  href="https://mayahelmi.github.io/PHP-Basics/#03-loops-09-multiplication-table"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-07-php-multiplication-table.jpg"
+                      alt="Rendered result of the PHP multiplication-table exercise"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >PHP exercises</span
+                  ></a
+                >
+                <a
+                  href="https://github.com/MayaHelmi/PHP-Forms"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-07-php-ticket-form.jpg"
+                      alt="Screenshot of the PHP ticket-booking form"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >Form task</span
+                  ></a
+                >
+              </div>
+            </article>
+
+            <article
+              class="relative rounded-md border-2 border-[#b3b3b3] bg-white p-[clamp(1.3rem,3.5vw,2.6rem)] transition-shadow hover:shadow-xl motion-reduce:transition-none"
+            >
+              <p
+                class="mb-2 inline-block bg-[#eee] px-2 py-1 text-[0.66rem] font-medium uppercase tracking-[0.18em] text-[#f16e00] md:absolute md:left-[-110px] md:top-10 md:-translate-x-1/2"
+              >
+                Week 8
+              </p>
+              <h3 class="text-xl font-bold">
+                Final project — charity donation platform
+              </h3>
+              <div
+                class="mt-5 grid items-center gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_auto_1fr_auto_1fr]"
+              >
+                <a
+                  href="https://www.figma.com/design/tMWo0XexJzQcxXI9hLDwaO/HopeBridge?node-id=4405-3140&amp;t=spP08T9CFm9fDGmC-1"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-08-hopebridge-wireframes.jpg"
+                      alt="The platform's sixteen wireframe screens in Figma"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >Wireframes — Figma</span
+                  ></a
+                >
+                <span
+                  class="hidden text-lg font-medium text-[#f16e00] lg:block"
+                  aria-hidden="true"
+                  >→</span
+                >
+                <a
+                  href="https://www.figma.com/design/tMWo0XexJzQcxXI9hLDwaO/HopeBridge?node-id=0-1&amp;p=f&amp;t=spP08T9CFm9fDGmC-1"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-08-hopebridge-mockups.jpg"
+                      alt="The platform's high-fidelity mockup screens in Figma"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >Mockups — Figma</span
+                  ></a
+                >
+                <span
+                  class="hidden text-lg font-medium text-[#f16e00] lg:block"
+                  aria-hidden="true"
+                  >→</span
+                >
+                <a
+                  href="https://mayahelmi.github.io/hopebridge-charity-platform/"
+                  target="_blank"
+                  rel="noopener"
+                  class="group overflow-hidden rounded-md border-2 border-[#b3b3b3] bg-white text-black transition-transform hover:-translate-y-1 hover:border-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] motion-reduce:transition-none"
+                  ><span
+                    class="block aspect-[16/10] overflow-hidden border-b border-[#b3b3b3] bg-[#eee]"
+                    ><img
+                      src="assets/images/week-08-hopebridge-live.jpg"
+                      alt="Four pages of the live charity platform"
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" /></span
+                  ><span
+                    class="block px-3 py-2 text-xs font-medium uppercase tracking-[0.08em]"
+                    >Platform — live</span
+                  ></a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="training"
+        class="px-[clamp(1.25rem,5vw,4rem)] py-[clamp(5rem,11vh,8rem)]"
+      >
+        <div class="mx-auto w-full max-w-[1180px]">
+          <h2
+            class="mb-[clamp(1.25rem,2.5vw,2rem)] text-[clamp(1.05rem,2.1vw,1.45rem)] font-medium uppercase tracking-[0.2em] text-[#f16e00]"
+          >
+            03 · Formal Training Received
+          </h2>
+          <div class="mt-9 grid items-start gap-5 lg:grid-cols-3">
+            <article
+              class="rounded-md border-2 border-[#b3b3b3] border-t-[#ff7900] bg-white p-6"
+            >
+              <h3 class="mb-3 text-xl font-bold tracking-[-0.025em]">
+                Front End
+              </h3>
+              <ul class="divide-y divide-black/10">
+                <li class="py-2.5">HTML5 &amp; Semantic Structure</li>
+                <li class="py-2.5">CSS Styling &amp; Layout</li>
+                <li class="py-2.5">Responsive Web Design</li>
+                <li class="py-2.5">Bootstrap &amp; Tailwind CSS</li>
+                <li class="py-2.5">JavaScript Programming</li>
+                <li class="py-2.5">UX Research &amp; Wireframing</li>
+                <li class="py-2.5">Git &amp; GitHub</li>
+              </ul>
+              <div
+                class="mt-5 grid grid-cols-2 gap-x-3 gap-y-2 border-t border-black/10 pt-4"
+              >
+                <span
+                  class="col-span-2 text-xs font-medium uppercase tracking-[0.09em] text-[#666]"
+                  >Tools</span
+                >
+                <span
+                  class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.09em] text-[#595959]"
+                  ><img
+                    src="assets/icons/html5.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />HTML5</span
+                ><span
+                  class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.09em] text-[#595959]"
+                  ><img
+                    src="assets/icons/css3.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />CSS3</span
+                ><span
+                  class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.09em] text-[#595959]"
+                  ><img
+                    src="assets/icons/javascript.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />JavaScript</span
+                ><span
+                  class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.09em] text-[#595959]"
+                  ><img
+                    src="assets/icons/bootstrap.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />Bootstrap</span
+                ><span
+                  class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.09em] text-[#595959]"
+                  ><img
+                    src="assets/icons/tailwindcss.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />Tailwind</span
+                ><span
+                  class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.09em] text-[#595959]"
+                  ><img
+                    src="assets/icons/figma.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />Figma</span
+                ><span
+                  class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.09em] text-[#595959]"
+                  ><img
+                    src="assets/icons/trello.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />Trello</span
+                ><span
+                  class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.09em] text-[#595959]"
+                  ><img
+                    src="assets/icons/git.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />Git</span
+                ><span
+                  class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.09em] text-[#595959]"
+                  ><img
+                    src="assets/icons/github.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />GitHub</span
+                >
+              </div>
+            </article>
+            <article
+              class="rounded-md border-2 border-[#b3b3b3] border-t-[#ff7900] bg-white p-6"
+            >
+              <h3 class="mb-3 text-xl font-bold tracking-[-0.025em]">
+                Back End
+              </h3>
+              <ul class="divide-y divide-black/10">
+                <li class="py-2.5">PHP &amp; Back-End Development</li>
+                <li class="py-2.5">Form Handling &amp; Validation</li>
+                <li class="py-2.5">APIs &amp; Firebase</li>
+              </ul>
+              <div
+                class="mt-5 grid grid-cols-2 gap-x-3 gap-y-2 border-t border-black/10 pt-4"
+              >
+                <span
+                  class="col-span-2 text-xs font-medium uppercase tracking-[0.09em] text-[#666]"
+                  >Tools</span
+                ><span
+                  class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.09em] text-[#595959]"
+                  ><img
+                    src="assets/icons/php.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />PHP</span
+                ><span
+                  class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.09em] text-[#595959]"
+                  ><img
+                    src="assets/icons/firebase.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />Firebase</span
+                >
+              </div>
+            </article>
+            <article
+              class="rounded-md border-2 border-[#b3b3b3] border-t-[#ff7900] bg-white p-6"
+            >
+              <h3 class="mb-3 text-xl font-bold tracking-[-0.025em]">
+                Database
+              </h3>
+              <ul class="divide-y divide-black/10">
+                <li class="py-2.5">Database Design &amp; ERDs</li>
+                <li class="py-2.5">MySQL Implementation</li>
+              </ul>
+              <div
+                class="mt-5 grid grid-cols-2 gap-x-3 gap-y-2 border-t border-black/10 pt-4"
+              >
+                <span
+                  class="col-span-2 text-xs font-medium uppercase tracking-[0.09em] text-[#666]"
+                  >Tools</span
+                ><span
+                  class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.09em] text-[#595959]"
+                  ><img
+                    src="assets/icons/mysql.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />MySQL</span
+                ><span
+                  class="text-xs font-medium uppercase tracking-[0.09em] text-[#595959]"
+                  >ERD</span
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="ending"
+        class="bg-black px-[clamp(1.25rem,5vw,4rem)] pb-12 pt-[clamp(5rem,11vh,8rem)] text-white selection:bg-[#ff7900]"
+      >
+        <div class="mx-auto w-full max-w-[1180px]">
+          <div class="flex items-center gap-7">
+            <h2
+              class="min-w-0 flex-1 text-balance text-[clamp(2.4rem,6vw,4.6rem)] font-normal leading-[1.067] tracking-[-0.025em]"
+            >
+              WOO<em class="font-semibold">!</em> YOU REACHED THE END.
+            </h2>
+            <button
+              data-celebrate
+              type="button"
+              aria-label="Celebrate with confetti and a cheering sound"
+              class="ml-auto shrink-0 cursor-pointer rounded-xl p-1 leading-none transition-transform hover:-rotate-12 hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transition-none"
+            >
+              <svg
+                viewBox="0 0 64 64"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-[clamp(76px,8vw,108px)] w-[clamp(76px,8vw,108px)] origin-center"
+              >
+                <path d="M10 54 L22 26 L38 42 Z" fill="#FFF3E4" />
+                <path
+                  d="M14 44 L30 34 M12 50 L34 38"
+                  stroke="#E8830A"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <g stroke="#FFF3E4" stroke-width="2.4" stroke-linecap="round">
+                  <path d="M40 24 L46 18" />
+                  <path d="M44 32 L52 30" />
+                  <path d="M34 16 L36 8" />
+                </g>
+                <rect
+                  x="48"
+                  y="10"
+                  width="6"
+                  height="6"
+                  rx="1"
+                  fill="#54300A"
+                  transform="rotate(18 51 13)"
+                />
+                <rect
+                  x="54"
+                  y="38"
+                  width="6"
+                  height="6"
+                  rx="1"
+                  fill="#FFF3E4"
+                  transform="rotate(-14 57 41)"
+                />
+                <rect
+                  x="24"
+                  y="6"
+                  width="5"
+                  height="5"
+                  rx="1"
+                  fill="#FFD9B0"
+                  transform="rotate(28 26 8)"
+                />
+                <circle cx="46" cy="44" r="2.6" fill="#FFD9B0" />
+                <circle cx="56" cy="22" r="2.4" fill="#FFF3E4" />
+              </svg>
+            </button>
+          </div>
+          <audio
+            data-celebration-sound
+            src="assets/audio/celebration-cheer.mp3"
+            preload="metadata"
+          ></audio>
+          <footer
+            class="mt-16 flex flex-wrap justify-between gap-4 border-t border-[#fff3e4]/50 pt-6 text-xs font-medium uppercase tracking-[0.1em] text-[#fff3e4]"
+          >
+            <div class="flex flex-col gap-2">
+              <span>Maya Helmi · Software Engineering</span
+              ><span>NourEddin Abu Salhieh · Data Science &amp; AI</span>
+            </div>
+            <span
+              >Orange Digital Center — Coding Academy by Orange · Amman</span
+            >
+          </footer>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
