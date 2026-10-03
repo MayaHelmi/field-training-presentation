@@ -2,10 +2,10 @@
 
 ## Celebration sound
 
-“Crowd Cheer and Applause” by DRAGON-STUDIO, downloaded from Pixabay.
+“YAAAAAAAAY” from Myinstants, selected by the website owner.
 
-- Source: https://pixabay.com/sound-effects/people-crowd-cheer-and-applause-406644/
-- License: https://pixabay.com/service/license-summary/
+- Source page: https://www.myinstants.com/en/instant/yaaaaaaaay/
+- Original download: https://www.myinstants.com/media/sounds/kids-saying-yay-sound-effect_3.mp3
 - Use: the celebration button at the end of the website
 
-The source page states that the sound is free for personal and commercial use. Attribution is optional and included here for provenance.
+The source is recorded here for provenance. Myinstants does not state a reusable-content license on the sound page.
