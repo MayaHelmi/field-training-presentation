@@ -71,15 +71,19 @@
     ></div>
 
     <nav
+      data-site-nav
       class="fixed inset-x-0 top-1 z-40 bg-black px-[clamp(1.25rem,5vw,4rem)] py-3 text-white"
       aria-label="Main navigation"
     >
       <div class="mx-auto flex w-full max-w-[1180px] items-center gap-6">
-        <span class="hidden shrink-0 text-xs font-medium md:block"
-          >Maya &amp; NourEddin — Field Training</span
-        >
+        <span class="shrink-0 text-xs font-medium">
+          <span class="md:hidden">Field Training</span>
+          <span class="hidden md:inline"
+            >Maya &amp; NourEddin — Field Training</span
+          >
+        </span>
         <div
-          class="flex min-w-0 flex-1 items-center gap-5 overflow-x-auto whitespace-nowrap [scrollbar-width:none]"
+          class="hidden min-w-0 flex-1 items-center gap-5 whitespace-nowrap md:flex"
         >
           <a
             data-nav-link
@@ -109,7 +113,7 @@
         <div
           data-github-menu
           data-open="false"
-          class="relative shrink-0 border-l border-[#555] pl-4"
+          class="relative hidden shrink-0 border-l border-[#555] pl-4 md:block"
         >
           <button
             data-github-button
@@ -144,6 +148,101 @@
               target="_blank"
               rel="noopener"
               class="flex items-center justify-between gap-4 px-3 py-2 text-xs font-medium tracking-wide hover:bg-[#eee] hover:text-[#f16e00] focus-visible:bg-[#eee] focus-visible:text-[#f16e00]"
+              >NourEddin Abu Salhieh <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+        <button
+          data-mobile-nav-button
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-navigation"
+          aria-label="Open navigation menu"
+          class="ml-auto flex h-10 w-10 cursor-pointer items-center justify-center rounded-sm border border-[#555] transition-colors hover:border-[#ff7900] hover:text-[#ff7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff7900] md:hidden"
+        >
+          <svg
+            data-mobile-menu-icon
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="square"
+            aria-hidden="true"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg
+            data-mobile-close-icon
+            class="hidden"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="square"
+            aria-hidden="true"
+          >
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+      <div
+        data-mobile-nav
+        id="mobile-navigation"
+        class="absolute inset-x-0 top-full hidden max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-[#333] bg-black px-[clamp(1.25rem,5vw,4rem)] pb-6 pt-3 shadow-2xl md:hidden"
+      >
+        <div class="mx-auto flex max-w-[1180px] flex-col">
+          <a
+            data-nav-link
+            data-mobile-nav-link
+            href="#hero"
+            class="border-b border-[#333] px-3 py-4 text-sm font-medium transition-colors hover:bg-[#1a1a1a] hover:text-[#ff7900] focus-visible:bg-[#1a1a1a] focus-visible:text-[#ff7900] focus-visible:outline-none"
+            >Start</a
+          >
+          <a
+            data-nav-link
+            data-mobile-nav-link
+            href="#workflow"
+            class="border-b border-[#333] px-3 py-4 text-sm font-medium transition-colors hover:bg-[#1a1a1a] hover:text-[#ff7900] focus-visible:bg-[#1a1a1a] focus-visible:text-[#ff7900] focus-visible:outline-none"
+            >How we worked</a
+          >
+          <a
+            data-nav-link
+            data-mobile-nav-link
+            href="#tasks"
+            class="border-b border-[#333] px-3 py-4 text-sm font-medium transition-colors hover:bg-[#1a1a1a] hover:text-[#ff7900] focus-visible:bg-[#1a1a1a] focus-visible:text-[#ff7900] focus-visible:outline-none"
+            >Tasks</a
+          >
+          <a
+            data-nav-link
+            data-mobile-nav-link
+            href="#training"
+            class="px-3 py-4 text-sm font-medium transition-colors hover:bg-[#1a1a1a] hover:text-[#ff7900] focus-visible:bg-[#1a1a1a] focus-visible:text-[#ff7900] focus-visible:outline-none"
+            >Formal Training</a
+          >
+          <div class="mt-2 border-t border-[#555] pt-4">
+            <p
+              class="px-3 pb-2 text-[0.65rem] font-medium uppercase tracking-[0.16em] text-[#b3b3b3]"
+            >
+              GitHub
+            </p>
+            <a
+              data-mobile-nav-link
+              href="https://github.com/MayaHelmi"
+              target="_blank"
+              rel="noopener"
+              class="flex items-center justify-between px-3 py-3 text-sm font-medium transition-colors hover:bg-[#1a1a1a] hover:text-[#ff7900] focus-visible:bg-[#1a1a1a] focus-visible:text-[#ff7900] focus-visible:outline-none"
+              >Maya Helmi <span aria-hidden="true">↗</span></a
+            >
+            <a
+              data-mobile-nav-link
+              href="https://github.com/NourEddin004"
+              target="_blank"
+              rel="noopener"
+              class="flex items-center justify-between px-3 py-3 text-sm font-medium transition-colors hover:bg-[#1a1a1a] hover:text-[#ff7900] focus-visible:bg-[#1a1a1a] focus-visible:text-[#ff7900] focus-visible:outline-none"
               >NourEddin Abu Salhieh <span aria-hidden="true">↗</span></a
             >
           </div>

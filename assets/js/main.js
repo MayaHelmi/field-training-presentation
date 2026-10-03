@@ -1,4 +1,43 @@
 (() => {
+  const siteNav = document.querySelector("[data-site-nav]");
+  const mobileNav = document.querySelector("[data-mobile-nav]");
+  const mobileNavButton = document.querySelector("[data-mobile-nav-button]");
+  const mobileMenuIcon = document.querySelector("[data-mobile-menu-icon]");
+  const mobileCloseIcon = document.querySelector("[data-mobile-close-icon]");
+
+  function setMobileMenu(open) {
+    if (!mobileNav || !mobileNavButton) return;
+    mobileNav.classList.toggle("hidden", !open);
+    mobileNavButton.setAttribute("aria-expanded", String(open));
+    mobileNavButton.setAttribute(
+      "aria-label",
+      open ? "Close navigation menu" : "Open navigation menu",
+    );
+    mobileMenuIcon?.classList.toggle("hidden", open);
+    mobileCloseIcon?.classList.toggle("hidden", !open);
+  }
+
+  if (siteNav && mobileNav && mobileNavButton) {
+    mobileNavButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      setMobileMenu(mobileNavButton.getAttribute("aria-expanded") !== "true");
+    });
+
+    mobileNav.querySelectorAll("[data-mobile-nav-link]").forEach((link) => {
+      link.addEventListener("click", () => setMobileMenu(false));
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!siteNav.contains(event.target)) setMobileMenu(false);
+    });
+
+    window
+      .matchMedia("(min-width: 768px)")
+      .addEventListener("change", (event) => {
+        if (event.matches) setMobileMenu(false);
+      });
+  }
+
   const githubMenu = document.querySelector("[data-github-menu]");
   const githubButton = document.querySelector("[data-github-button]");
   const githubDropdown = document.querySelector("[data-github-dropdown]");
@@ -31,6 +70,16 @@
       }
     });
   }
+
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.key === "Escape" &&
+      mobileNavButton?.getAttribute("aria-expanded") === "true"
+    ) {
+      setMobileMenu(false);
+      mobileNavButton.focus();
+    }
+  });
 
   const celebrationButton = document.querySelector("[data-celebrate]");
   const celebrationSound = document.querySelector("[data-celebration-sound]");
@@ -175,15 +224,21 @@
       timelineFill.style.height = `${Math.min(1, Math.max(0, progress)) * 100}%`;
     }
 
-    let active = linkedSections[0];
+    let activeSection = linkedSections[0]?.section;
     linkedSections.forEach((item) => {
       if (item.section.getBoundingClientRect().top <= viewportHeight * 0.4)
-        active = item;
+        activeSection = item.section;
     });
 
-    linkedSections.forEach(({ link }) => {
-      const isActive = link === active?.link;
-      link.classList.toggle("shadow-[inset_0_-3px_0_#ff7900]", isActive);
+    linkedSections.forEach(({ link, section }) => {
+      const isActive = section === activeSection;
+      const isMobileLink = link.hasAttribute("data-mobile-nav-link");
+      link.classList.toggle(
+        "shadow-[inset_0_-3px_0_#ff7900]",
+        isActive && !isMobileLink,
+      );
+      link.classList.toggle("bg-[#1a1a1a]", isActive && isMobileLink);
+      link.classList.toggle("text-[#ff7900]", isActive && isMobileLink);
       link.setAttribute("aria-current", isActive ? "page" : "false");
     });
   }
