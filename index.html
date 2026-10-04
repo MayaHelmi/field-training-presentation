@@ -16,7 +16,7 @@
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍊</text></svg>"
     />
-    <link rel="stylesheet" href="assets/css/styles.css?v=148af1ff93" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=3b1a832265" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -75,7 +75,9 @@
       class="fixed inset-x-0 top-1 z-40 bg-black px-[clamp(1.25rem,5vw,4rem)] py-3 text-white [--mobile-nav-offset:4.25rem]"
       aria-label="Main navigation"
     >
-      <div class="mx-auto flex w-full max-w-[1180px] items-center gap-6">
+      <div
+        class="relative mx-auto flex w-full max-w-[1180px] items-center gap-6"
+      >
         <a
           href="#hero"
           aria-label="Go to the start of the page"
@@ -87,7 +89,7 @@
           >
         </a>
         <div
-          class="hidden min-w-0 flex-1 items-center gap-5 whitespace-nowrap md:flex"
+          class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-5 whitespace-nowrap md:flex"
         >
           <a
             data-nav-link
@@ -117,7 +119,7 @@
         <div
           data-github-menu
           data-open="false"
-          class="relative hidden shrink-0 border-l border-[#555] pl-4 md:block"
+          class="relative ml-auto hidden shrink-0 border-l border-[#555] pl-4 md:block"
         >
           <button
             data-github-button
